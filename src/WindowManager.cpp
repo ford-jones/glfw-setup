@@ -1,6 +1,6 @@
 #include "../hdr/WindowManager.h"
 
-int WindowManager::WindowInit()
+int WindowManager::Initialise()
 {
     if(!glfwInit())
     {
@@ -27,7 +27,6 @@ int WindowManager::WindowInit()
         glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT);
 
-        errorMessage = nullptr;
         errorCode = glfwGetError(errorMessage); 
 
         if(errorCode != GLFW_NO_ERROR)

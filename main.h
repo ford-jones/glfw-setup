@@ -4,6 +4,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-WindowManager *manager; 
+WindowManager *window; 
 
 #endif

@@ -17,7 +17,7 @@ class WindowManager
 
         WindowManager(int h, int w, const char *t, GLFWmonitor *m, GLFWwindow *win);
         virtual ~WindowManager();
-        int WindowInit();
+        int Initialise();
         
     private:
         int errorCode;

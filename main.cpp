@@ -2,9 +2,9 @@
 
 int main()
 {
-    manager = new WindowManager(800, 600, "Ford & Xaviers Awesome Window", NULL, NULL);
-    manager->WindowInit();
+    window = new WindowManager(800, 600, "Ford & Xaviers Awesome Window", NULL, NULL);
+    window->Initialise();
 
-    delete manager;
+    delete window;
     return 0;
 };
