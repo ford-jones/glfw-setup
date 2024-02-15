@@ -18,8 +18,16 @@ int WindowManager::WindowInit()
         fullscreen
     );
 
+    glfwMakeContextCurrent(window);
+    glfwSwapInterval(1);
+    glClearColor(red, green, blue, alpha);
+
     while(!glfwWindowShouldClose(window))
     {
+        glfwPollEvents();
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        errorMessage = nullptr;
         errorCode = glfwGetError(errorMessage); 
 
         if(errorCode != GLFW_NO_ERROR)
@@ -29,6 +37,8 @@ int WindowManager::WindowInit()
 
             return errorCode;
         };
+
+        glfwSwapBuffers(window);
     };
 
     return GLFW_NO_ERROR;
@@ -41,6 +51,11 @@ WindowManager::WindowManager(int h, int w, const char *t, GLFWmonitor *m, GLFWwi
     title = t;
     monitor = m;
     fullscreen = win;
+
+    red = 0.0f;
+    green = 0.0f;
+    blue = 1.0f;
+    alpha = 0.0f;
 };
 
 WindowManager::~WindowManager() 

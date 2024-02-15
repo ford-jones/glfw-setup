@@ -13,6 +13,8 @@ class WindowManager
         GLFWmonitor *monitor;
         GLFWwindow *fullscreen, *window;
 
+        GLclampf red, green, blue, alpha;
+
         WindowManager(int h, int w, const char *t, GLFWmonitor *m, GLFWwindow *win);
         virtual ~WindowManager();
         int WindowInit();
