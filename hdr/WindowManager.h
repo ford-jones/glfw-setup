@@ -16,9 +16,11 @@ class WindowManager
         GLclampf red, green, blue, alpha;
 
         WindowManager(int h, int w, const char *t, GLFWmonitor *m, GLFWwindow *win);
-        virtual ~WindowManager();
         int Initialise();
-        
+        static void KeydownHandler(GLFWwindow *win, int key, int scancode, int action, int mods);
+
+        virtual ~WindowManager();
+
     private:
         int errorCode;
         const char** errorMessage;
